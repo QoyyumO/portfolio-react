@@ -11,6 +11,7 @@ const App: React.FC = () => {
       <Header />
       <main>
         <Routes>
+           <Route path="/" element={<Portfolio />} />
           <Route path="/home" element={<Portfolio />} />
           <Route path="/projects" element={<Slider />} />
         </Routes>
