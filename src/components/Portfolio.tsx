@@ -91,7 +91,7 @@ const Portfolio: React.FC = () => {
         <h1>Projects</h1>
         <div className="portfolio-cards">
           {[
-            { src: 'assets/guess.png', alt: 'Guessing Game', label: 'Guessing Game', desc: 'A guessing game using javascript where it is threaded with real time.', link: 'https://guess-qoyyumo.vercel.app' },
+            { src: 'assets/toothfixers.png', alt: 'Toothfixers', label: 'Toothfixers', desc: 'A web-based application for managing patients clinical records for ToothFixers Ltd., a large dental company with multiple dentists.', link: 'https://github.com/QoyyumO/toothfixers-project' },
             { src: 'assets/result-summary.png', alt: 'Result Summary', label: 'Result Summary', desc: 'Another web design template to show the review or summary of a test done.', link: 'https://result-summary-QoyyumO.vercel.app' },
             { src: 'assets/CBT.jpg', alt: 'CBT project', label: 'CBT project', desc: 'A C++ project on Computer based testing', link: 'https://github.com/QoyyumO/CBT' }
           ].map(project => (
