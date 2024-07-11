@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body, html {
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .slider-container {
+    width: 100vw;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }
+  
+  .content {
+    position: absolute;
+    bottom: 200px;
+    left: 50px;
+    color: rgb(5, 254, 21);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 50%;
+  }
+  
+  .title {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .description {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+  
+  .see-more {
+    background: none;
+    border: 2px solid white;
+    color: rgb(12, 217, 26);;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .see-more:hover {
+    color: white;
+    background-color: rgb(5, 254, 21);;
+  }
+  
+  .preview-container {
+    position: absolute;
+    margin-bottom: 100px;
+    bottom: 50px;
+    right: 50px;
+    display: flex;
+    gap: 10px;
+  }
+  
+  .preview {
+    width: 200px;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .nav {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 20px;
+  }
+  
+  .btn {
+    background-color: rgba(244, 8, 8, 0.3);
+    border: none;
+    color: black;
+    font-size: 24px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  @media (max-width: 768px) {
+    .content {
+      left: 20px;
+      bottom: 20px;
+      max-width: 70%;
+    }
+  
+    .preview-container {
+      right: 20px;
+      bottom: 20px;
+    }
+  
+    .preview {
+      width: 80px;
+      height: 48px;
+    }
+  
+    .nav {
+      bottom: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .content {
+      max-width: 90%;
+    }
+  
+    .title {
+      font-size: 24px;
+    }
+  
+    .description {
+      font-size: 14px;
+    }
+  
+    .preview-container {
+      display: none;
+    }
+  }
