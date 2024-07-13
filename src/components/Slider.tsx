@@ -80,7 +80,6 @@ const projects: Project[] = [
 
 const Slider: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [prevIndex, setPrevIndex] = useState(projects.length - 1);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -90,12 +89,10 @@ const Slider: React.FC = () => {
   }, [activeIndex]);
 
   const handleNext = () => {
-    setPrevIndex(activeIndex);
     setActiveIndex((prevIndex) => (prevIndex + 1) % projects.length);
   };
 
   const handlePrev = () => {
-    setPrevIndex(activeIndex);
     setActiveIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
   };
 
