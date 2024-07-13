@@ -78,7 +78,10 @@ const Portfolio: React.FC = () => {
             { src: 'assets/c++.svg', alt: 'C++', label: 'C++' },
             { src: 'assets/nodejs.svg', alt: 'Node JS', label: 'Node JS' },
             { src: 'assets/pg.png', alt: 'Postgres SQL', label: 'Postgres SQL' },
-            { src: 'assets/nestjs.png', alt: 'Nest JS', label: 'Nest JS' }
+            { src: 'assets/nestjs.png', alt: 'Nest JS', label: 'Nest JS' },
+            { src: 'assets/vuejs.png', alt: 'Vue JS', label: 'Vue JS' },
+            { src: 'assets/vite.svg', alt: 'Vite JS', label: 'Vite JS' },
+            { src: 'assets/tailwind.png', alt: 'Tailwind CSS', label: 'Tailwind CSS' }
           ].map(skill => (
             <div className="skill-card" key={skill.alt}>
               <img src={skill.src} alt={skill.alt} />

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 import './Slider.css';
 
@@ -47,10 +47,16 @@ const projects: Project[] = [
     link: "https://up-construction-qoyyumo.vercel.app"
   },
   {
-    title: "Consultae",
+    title: "Shapely",
     description: "A web design on a firm that deals with web development",
     imageUrl: "/assets/shapely.png",
     link: "https://shapely-qoyyumo.vercel.app"
+  },
+  {
+    title: "Vue-multi-projects",
+    description: "A multi-project, counter, notes and quiz app, made with vue js, a javascript framework.",
+    imageUrl: "/assets/vue-projects.png",
+    link: "https://vue-projects-nu.vercel.app"
   },
   {
     title: "Consultae",
@@ -73,44 +79,61 @@ const projects: Project[] = [
 ];
 
 const Slider: React.FC = () => {
-    const [activeIndex, setActiveIndex] = useState(0);
-  
-    const handleNext = () => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % projects.length);
-    };
-  
-    const handlePrev = () => {
-      setActiveIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
-    };
-  
-    return (
-      <div className="slider-container" style={{ backgroundImage: `url(${projects[activeIndex].imageUrl})` }}>
-        <div className="content">
-          <h2 className="title">{projects[activeIndex].title}</h2>
-          <p className="description">{projects[activeIndex].description}</p>
-          <button className="see-more">
-            <a href={projects[activeIndex].link}>See More -&gt;</a>
-          </button>
-        </div>
-        <div className="preview-container">
-          {[1, 2, 3].map((offset) => (
-            <div
-              key={offset}
-              className="preview"
-              style={{ backgroundImage: `url(${projects[(activeIndex + offset) % projects.length].imageUrl})` }}
-            ></div>
-          ))}
-        </div>
-        <nav className="nav">
-          <button className="btn prev" onClick={handlePrev}>
-            <FaChevronLeft />
-          </button>
-          <button className="btn next" onClick={handleNext}>
-            <FaChevronRight />
-          </button>
-        </nav>
-      </div>
-    );
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [prevIndex, setPrevIndex] = useState(projects.length - 1);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 5000); // Change the slide every 5 seconds
+    return () => clearInterval(interval);
+  }, [activeIndex]);
+
+  const handleNext = () => {
+    setPrevIndex(activeIndex);
+    setActiveIndex((prevIndex) => (prevIndex + 1) % projects.length);
   };
-  
-  export default Slider;
+
+  const handlePrev = () => {
+    setPrevIndex(activeIndex);
+    setActiveIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
+  };
+
+  return (
+    <div
+      className={`slider-container`}
+      style={{
+        backgroundImage: `url(${projects[activeIndex].imageUrl})`,
+      }}
+    >
+      <div className="content">
+        <h2 className="title">{projects[activeIndex].title}</h2>
+        <p className="description">{projects[activeIndex].description}</p>
+        <button className="see-more">
+          <a href={projects[activeIndex].link}>See More -&gt;</a>
+        </button>
+      </div>
+      <div className="preview-container">
+        {[1, 2, 3].map((offset) => (
+          <div
+            key={offset}
+            className="preview"
+            style={{
+              backgroundImage: `url(${projects[(activeIndex + offset) % projects.length].imageUrl})`,
+            }}
+          ></div>
+        ))}
+      </div>
+      <nav className="nav">
+        <button className="btn prev" onClick={handlePrev}>
+          <FaChevronLeft />
+        </button>
+        <button className="btn next" onClick={handleNext}>
+          <FaChevronRight />
+        </button>
+      </nav>
+    </div>
+  );
+};
+
+export default Slider;
