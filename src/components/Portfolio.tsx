@@ -77,7 +77,7 @@ const Portfolio: React.FC = () => {
             { src: 'assets/Adobe_Illustrator_CC_icon.svg.png', alt: 'Adobe Illustrator', label: 'Adobe Illustrator' },
             { src: 'assets/c++.svg', alt: 'C++', label: 'C++' },
             { src: 'assets/nodejs.svg', alt: 'Node JS', label: 'Node JS' },
-            { src: 'assets/pg.png', alt: 'Postgres SQL', label: 'Postgres SQL' },
+            { src: 'assets/pg.png', alt: 'PostgreSQL', label: 'PostgreSQL' },
             { src: 'assets/nestjs.png', alt: 'Nest JS', label: 'Nest JS' },
             { src: 'assets/vuejs.png', alt: 'Vue JS', label: 'Vue JS' },
             { src: 'assets/vite.svg', alt: 'Vite JS', label: 'Vite JS' },
